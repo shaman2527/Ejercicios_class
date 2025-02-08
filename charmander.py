@@ -1,15 +1,14 @@
-from pokemon import Pokemon
+from asyncio import __main__
 
+from tipofuego import TipoFuego
 
-class Charmander(Pokemon):
+class Charmander(TipoFuego):
 
-    def __init__(self, nombre: object, nivel: object, salud: object, color: object) -> None:
-        super().__init__(nombre, nivel, salud, color)
+    def __init__(self, nombre: object, nivel: object, salud: object, color: object, temperatura_max: object):
+        super().__init__(nombre, nivel, salud, color,temperatura_max)
 
+if '__main__' == __main__:
+    charmander_1 = Charmander('RBS', 100, 100, 'Rojo',10)
 
-charmander_1 = Charmander('RBS', 100, 100, 'Rojo')
-
-print(charmander_1.salud)
-print(charmander_1.nivel)
-print(charmander_1.nombre)
-print(charmander_1.color)
+    print(charmander_1.temperatura_max)
+    print(charmander_1.atacar())

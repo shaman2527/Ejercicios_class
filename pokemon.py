@@ -1,4 +1,6 @@
-class Pokemon:
+from abc import ABC, abstractmethod
+
+class Pokemon(ABC):
 
     def __init__(self, nombre, nivel, salud, color):
         self.nombre = nombre
@@ -8,7 +10,6 @@ class Pokemon:
 
         self.salud = salud
         self.nivel = nivel
-
 
         # Propiedades Leer y Modificar un atributo de la class privado y publico.
 
@@ -36,3 +37,6 @@ class Pokemon:
             print("El nivel no puede ser negativo",
                   "El nivel no puede ser mayor a 1000")
 
+    @abstractmethod
+    def atacar(self):
+        pass
